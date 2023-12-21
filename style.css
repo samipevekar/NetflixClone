@@ -4,10 +4,12 @@
 }
 :root{
     --hover:rgb(199, 1, 1);
+    --gray:rgb(66, 66, 66);
 }
 body{
     font-family: sans-serif;
     color: white;
+    background-color: black;
 }
 .home{
     height: 100vh;
@@ -65,7 +67,7 @@ nav h1{
     flex-direction: column;
     justify-content: center; 
     align-items: center;
-    margin-top: 20vh;
+    margin-top: 25vh;
     line-height: 30px;
 
     
@@ -90,7 +92,7 @@ nav h1{
 }
 .cntForm input{
     padding: 17px;
-    width: 310px;
+    width: 350px;
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid gray;
@@ -103,7 +105,7 @@ nav h1{
 }
 .cntForm button{
     padding: 16px;
-    width: 180px;
+    width: 200px;
     font-size: 20px;
     font-weight: bold;
     background-color: red;
@@ -118,5 +120,267 @@ nav h1{
 
 /* //tv section */
 
+.tv{
+    display: flex;
+    justify-content :space-around;
+    padding: 60px;
+    border-top: 10px solid var(--gray);
+}
+.tvCon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.tvCon p{
+    white-space: pre-wrap;
+    font-size: 20px;
+    margin-top: 20px;
+    
+}
+.tvCon h1{
+    font-size: 45px;
+    font-weight: 900;
+    margin-left: 50px;
+}
+.tvCon img{
+    width: 450px;
+    animation: tv alternate-reverse 10s infinite;
+}
+
+@keyframes tv{
+    0%{
+        background: url(./img/n1.png) no-repeat center center/cover;
+
+    }
+    25%{
+        
+    background: url(./img/n2.png) no-repeat center center/cover;
+    }
+    50%{
+        
+    background: url(./img/n3.png) no-repeat center center/cover;
+    }
+    75%{
+        
+    background: url(./img/n4.png) no-repeat center center/cover;
+    }
+    100%{
+        
+    background: url(./img/n5.png) no-repeat center center/cover;
+    } 
+}
 
 
+/* downlaod section */
+.download{
+    display: flex;
+    padding: 60px;
+    justify-content: space-around;
+    border-top: 10px solid var(--gray);
+}
+
+.down{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.down h1{
+    font-size: 45px;
+    font-weight: 900;
+    white-space: pre-wrap;
+
+}
+.down p{
+    font-size: 20px;
+    white-space: pre-wrap;
+    margin-top: 20px;
+}
+
+.down img{
+    width: 500px;
+}
+
+.watching{
+    display: flex;
+    padding: 60px;
+    justify-content: space-around;
+    border-top: 10px solid var(--gray);
+}
+.watch{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.watch p{
+    font-size: 20px;
+    white-space: pre-wrap;
+    margin-top: 20px;
+}
+.watch h1{
+    font-size: 45px;
+    font-weight: 900;
+    margin-left: 60px;
+}
+.watch img{
+    width: 500px;
+}
+.watch video{
+    top: 40px;
+    right: 100px;
+    width: 310px;
+    z-index: -1;
+    position: absolute;
+}
+
+.kids{
+    display: flex;
+    padding: 60px;
+    justify-content: space-around;
+    border-top: 10px solid var(--gray);
+
+}
+.kid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+}
+.kid p{
+    font-size: 20px;
+    white-space: pre-wrap;
+    margin-top: 20px;
+}
+.kid h1{
+    font-size: 45px;
+    font-weight: 900;
+    margin-left: 60px;
+    white-space: pre-wrap;
+}
+.kid img{
+    width: 500px;
+}
+
+
+/* question part */
+.questions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 60px;
+    justify-content: space-around;
+    border-top: 10px solid var(--gray);
+}
+.questions h1{
+    font-size: 45px;
+    font-weight: 900;
+}
+.detail{
+    margin-top: 40px;
+}
+
+.detail summary{
+    font-size: 25px;
+    background-color: rgb(50, 50, 50);
+    width: 800px;
+    padding: 25px;
+    margin-top: 5px;
+}
+.detail summary:hover{
+    background-color: rgb(88, 88, 88);
+}
+.detail p{
+    font-size: 20px;
+    margin-top: 2px;
+    padding: 25px;
+    white-space: pre-wrap;
+    width:800px ;
+    background-color:rgb(50, 50, 50) ;
+
+}
+
+.qPara{
+    font-size: 20px;
+    margin-top: 40px;
+
+}
+
+.qForm{
+    margin-top: 30px;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+}
+
+.qForm input{
+    padding: 17px;
+    width: 350px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    background-color: rgba(64, 64, 64, 0.253);
+    color: white;
+    margin-right: 10px;
+}
+::-webkit-input-placeholder{
+    color: rgb(212, 212, 212);
+}
+.qForm button{
+    padding: 16px;
+    width: 200px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    
+}
+.qForm button:hover{
+    background-color: var(--hover) ;
+}
+
+/* contact section */
+.contacts{
+    display: flex;
+    padding: 80px;
+    justify-content: space-around;
+    border-top: 10px solid var(--gray);
+}
+.contacts{
+    position: relative;
+}
+.contacts p{
+    position: absolute;
+    width: fit-content;
+    top: 50px;
+    left: 150px;
+    color: gray;
+    cursor: pointer;
+}
+.contact li{
+    list-style: none;
+    cursor: pointer;
+    color: gray;
+    margin-top: 10px;
+}
+.contact select{
+    padding: 6px 0px;
+    width: 120px;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    border-radius: 3px;
+    outline: white;
+    position: relative;
+    margin-top: 10px;
+}
+.contact option{
+    color: black;
+}
