@@ -1,0 +1,122 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+:root{
+    --hover:rgb(199, 1, 1);
+}
+body{
+    font-family: sans-serif;
+    color: white;
+}
+.home{
+    height: 100vh;
+    background: url(https://assets.nflxext.com/ffe/siteui/vlv3/563192ea-ac0e-4906-a865-ba9899ffafad/6b2842d1-2339-4f08-84f6-148e9fcbe01b/IN-en-20231218-popsignuptwoweeks-perspective_alpha_website_small.jpg)no-repeat center center/cover;
+    box-shadow: inset 0px 0px 500px 400px rgba(0, 0, 0, 0.694);
+    max-width: 100vw;
+    
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 120px;
+    align-items: center;
+}
+nav h1{
+    color: red;
+    font-size: 50px;
+}
+.navMenu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navMenu button{
+    margin-left: 20px;
+    font-weight: 600;
+    padding:7px 10px;
+    font-size: 16px;
+    background-color: red;
+    border: none;
+    border-radius: 3px;
+    color: white;
+}
+.navMenu button:hover{
+    background-color: rgb(199, 1, 1);
+}
+.navMenu select{
+    padding: 6px 0px;
+    width: 120px;
+    background-color: transparent;
+    color: white;
+    font-size: 18px;
+    border-radius: 3px;
+    outline: white;
+    position: relative;
+}
+.navMenu option{
+    color: black;
+}
+
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    margin-top: 20vh;
+    line-height: 30px;
+
+    
+}
+.content h1{
+    font-size: 45px;
+    font-weight: 900;
+    white-space: pre-wrap;
+    text-align: center;
+}
+.content p{
+    font-size: 20px;
+    margin-top: 20px;
+}
+.cntForm{
+    margin-top: 30px;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+
+    
+}
+.cntForm input{
+    padding: 17px;
+    width: 310px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    background-color: rgba(0, 0, 0, 0.253);
+    color: white;
+    margin-right: 10px;
+}
+::-webkit-input-placeholder{
+    color: rgb(212, 212, 212);
+}
+.cntForm button{
+    padding: 16px;
+    width: 180px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    
+}
+.cntForm button:hover{
+    background-color: var(--hover) ;
+}
+
+/* //tv section */
+
+
+
