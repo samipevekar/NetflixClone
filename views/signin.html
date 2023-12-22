@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign in</title>
     <link rel="icon" type="png" href="https://pngimg.com/d/netflix_PNG15.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../public/style.css">
 </head>
 <style>
     *{
@@ -20,7 +20,7 @@
         filter: contrast(2);
     }
     .signin{
-        background: url(img/netflix.png)no-repeat center center/cover;
+        background: url(../public/img/netflix.png)no-repeat center center/cover;
         height: 100vh;
         box-shadow: inset 0px 0px 500px 400px rgba(0, 0, 0, 0.694);
         color: white;
@@ -97,8 +97,8 @@
     <div id="signin">
         <form action="">
             <h1>Sign In</h1>
-            <input type="email" name="" id="" placeholder="Enter your email">
-            <input type="password" name="" id="" placeholder="Password">
+            <input type="email" name="" id="" placeholder="Enter your email" required autocomplete="no">
+            <input type="password" name="" id="" placeholder="Password" required autocomplete="no">
             <button type="submit">Sign In</button>
             
             <div class="signup">

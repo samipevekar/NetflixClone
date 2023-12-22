@@ -1,0 +1,194 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+    color: white;
+    background-color: rgb(19, 18, 18);
+}
+html{
+    scroll-behavior: smooth;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 30px;
+    background-color: rgba(0, 0, 0, 0.63);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+.navbar img{
+    width: 150px;
+    filter: contrast(2);
+}
+.navbar ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+.navbar li a{
+    text-decoration: none;
+    margin: 0px 20px;
+    color: white;
+}
+.navbar li a:hover{
+    color: rgb(194, 194, 194);
+}
+.navbar a{
+    text-decoration: none;
+    color: white;
+}
+
+/* home */
+#home{
+    background: url(homeImg/1.png)no-repeat center center/cover;
+    height: 500px;
+    position: relative;
+}
+
+#home button{
+    background-color: rgba(0, 0, 0, 0.635);
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    padding:10px 20px;
+    border: none;
+    border-radius: 5px;
+    position: absolute;
+    top: 350px;
+    left: 100px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgb(133, 132, 132);
+}
+
+/* continue watching */
+.continue{
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.continue h1{
+    margin: 10px 10px;
+}
+.cont{
+    display: flex;
+}
+.cont img{
+    width: 350px;
+    height: 200px;
+    margin: 20px 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgb(78, 78, 78);
+}
+
+/* trendings */
+#trending{
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+}
+.trend{
+    display: flex;
+    overflow: auto;
+}
+::-webkit-scrollbar{
+    width: 0px;
+}
+.trend img{
+    width: 350px;
+    margin: 20px 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgb(78, 78, 78);
+    height: 200px;
+}
+
+/* movies */
+
+#movies{
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+}
+
+.movie{
+    display: flex;
+    overflow: auto;
+}
+::-webkit-scrollbar{
+    width: 0px;
+}
+.movie img{
+    width: 350px;
+    margin: 20px 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgb(78, 78, 78);
+    height: 200px;
+}
+
+/* tv shows */
+#tvshows{
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+}
+
+.tv{
+    display: flex;
+    overflow: auto;
+}
+::-webkit-scrollbar{
+    width: 0px;
+}
+.tv img{
+    width: 350px;
+    margin: 20px 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgb(78, 78, 78);
+    height: 200px;
+}
+
+/* contact */
+.contacts{
+    display: flex;
+    padding: 80px;
+    justify-content: space-around;
+    border-top: 10px solid var(--gray);
+}
+.contacts{
+    position: relative;
+}
+.contacts p{
+    position: absolute;
+    width: fit-content;
+    top: 50px;
+    left: 150px;
+    color: gray;
+    cursor: pointer;
+}
+.contact li{
+    list-style: none;
+    cursor: pointer;
+    color: gray;
+    margin-top: 10px;
+}
+.contact select{
+    padding: 6px 0px;
+    width: 120px;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    border-radius: 3px;
+    outline: white;
+    position: relative;
+    margin-top: 10px;
+}
+.contact option{
+    color: black;
+}
