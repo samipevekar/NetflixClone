@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up</title>
     <link rel="icon" type="png" href="https://pngimg.com/d/netflix_PNG15.png">
+    
 </head>
 <style>
     *{
@@ -37,6 +38,7 @@
         justify-content: center;
         align-items: center;
         margin-top: 60px;
+        padding: 20px;
     }
     .form form{
         display: flex;
@@ -44,7 +46,7 @@
 
     }
     .form form input,button{
-        width: 450px;
+        max-width: 450px;
         padding: 15px;
         border: 1px solid gray;
         border-radius: 5px;
@@ -68,6 +70,22 @@
     form p{
         margin: 20px 0px;
     }
+    #para{
+        color: red;
+        text-align: center;
+    }
+    .note{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        
+    }
+    
+    .par{
+        color: red;
+    }
 </style>
 <body>
     <nav>
@@ -76,16 +94,42 @@
     </nav>
 
     <div class="form">
-        <form action="">
+        <form action="/signup" method="post" id="form">
             <h1>Create a password to start
 your membership</h1>
             <p>Just a few more steps and you're done!
 We hate paperwork, too.</p>
-            <input type="email" name="" id="" placeholder="Enter your email" required autocomplete="no">
-            <input type="password" name="" id="" placeholder="Password" required autocomplete="no">
+            <input type="email" name="email" id="" placeholder="Enter your email" required autocomplete="off">
+            <input type="password" name="password" id="password" placeholder="Create password" required autocomplete="off">
+            <% if (typeof errorMessage !== 'undefined') { %>
+                <p id="para"><%= errorMessage %></p>
+            <% } %>
+            
             <button type="submit">Sign Up</button>
         </form>
-
+        
     </div>
+    <div class="note">
+        <details>
+            <summary>Note : </summary>
+            <p class="par">1. Password must contain 8 characters</p>
+            <p class="par">2. Password must contain '@'</p>
+        </details>
+    </div>
+
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                var errorMessageElement = document.getElementById('para');
+                if (errorMessageElement) {
+                    errorMessageElement.style.display = 'none';
+                }
+            }, 3000); // 3000 milliseconds = 3 seconds
+        };
+    </script>
+
+    
+    
+    
 </body>
 </html>
