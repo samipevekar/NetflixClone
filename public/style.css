@@ -1,167 +1,171 @@
-*{
+* {
     padding: 0;
     margin: 0;
 }
-:root{
-    --hover:rgb(199, 1, 1);
-    --gray:rgb(66, 66, 66);
+
+:root {
+    --hover: rgb(199, 1, 1);
+    --gray: rgb(66, 66, 66);
 }
-body{
+
+body {
     font-family: sans-serif;
     color: white;
     background-color: black;
 }
-.home{
+
+.home {
     height: 100vh;
     background: url(img/netflix.png)no-repeat center center/cover;
     box-shadow: inset 0px 0px 500px 400px rgba(0, 0, 0, 0.694);
-    max-width: 100vw;
-    
 }
 
-nav{
+nav {
     display: flex;
     justify-content: space-between;
-    padding: 20px 120px;
+    padding: 1.25rem 7.5rem; /* 20px 120px converted to rem */
     align-items: center;
 }
 
-nav img{
-    width: 250px;
-    filter:contrast(2)
+nav img {
+    width: 15.625rem; /* 250px converted to rem */
+    filter: contrast(2);
 }
-.navMenu{
+
+.navMenu {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.navMenu button{
-    margin-left: 20px;
+
+.navMenu button {
+    margin-left: 1.25rem; /* 20px converted to rem */
     font-weight: 600;
-    padding:7px 10px;
-    font-size: 16px;
+    padding: 0.4375rem 0.625rem; 
+    font-size: 1rem; /* 16px converted to rem */
     background-color: red;
     border: none;
-    border-radius: 3px;
+    border-radius: 0.1875rem; /* 3px converted to rem */
     color: white;
 }
-.navMenu button:hover{
-    background-color: rgb(199, 1, 1);
+
+.navMenu button:hover {
+    background-color: var(--hover);
 }
-.navMenu select{
-    padding: 6px 0px;
-    width: 120px;
+
+.navMenu select {
+    padding: 0.375rem 0rem;
+    width: 7.5rem; 
     background-color: transparent;
     color: white;
-    font-size: 18px;
-    border-radius: 3px;
+    font-size: 1.125rem; /* 18px converted to rem */
+    border-radius: 0.1875rem; /* 3px converted to rem */
     outline: white;
     position: relative;
 }
-.navMenu option{
+
+.navMenu option {
     color: black;
 }
 
-
-.content{
+.content {
     display: flex;
     flex-direction: column;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     margin-top: 25vh;
     line-height: 30px;
-
-    
 }
-.content h1{
-    font-size: 45px;
+
+.content h1 {
+    font-size: 2.8125rem; /* 45px converted to rem */
     font-weight: 900;
     white-space: pre-wrap;
     text-align: center;
 }
-.content p{
-    font-size: 20px;
-    margin-top: 20px;
+
+.content p {
+    font-size: 1.25rem; /* 20px converted to rem */
+    margin-top: 1.25rem; /* 20px converted to rem */
 }
-.cntForm{
-    margin-top: 30px;
+
+.cntForm {
+    margin-top: 1.875rem; /* 30px converted to rem */
     flex-wrap: wrap;
     display: flex;
     justify-content: center;
-
-    
 }
 
-
-.cntForm a{
-    padding: 16px;
-    width: 200px;
-    font-size: 20px;
+.cntForm a {
+    padding: 1rem; /* 16px converted to rem */
+    width: 12.5rem; /* 200px converted to rem */
+    font-size: 1.25rem; /* 20px converted to rem */
     font-weight: 700;
     background-color: red;
     color: white;
-    border-radius: 5px;
+    border-radius: 0.3125rem; /* 5px converted to rem */
     border: none;
     text-align: center;
     text-decoration: none;
-    
 }
-.cntForm button:hover{
-    background-color: var(--hover) ;
+
+.cntForm button:hover {
+    background-color: var(--hover);
 }
 
 /* //tv section */
 
-.tv{
+.tv {
     display: flex;
-    justify-content :space-around;
-    padding: 60px;
-    border-top: 10px solid var(--gray);
+    justify-content: space-around;
+    padding: 3.75rem; /* 60px converted to rem */
+    border-top: 0.625rem solid var(--gray); /* 10px converted to rem */
 }
-.tvCon{
+
+.tvCon {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.tvCon p{
+
+.tvCon p {
     white-space: pre-wrap;
-    font-size: 20px;
-    margin-top: 20px;
-    
+    font-size: 1.25rem; /* 20px converted to rem */
+    margin-top: 1.25rem; /* 20px converted to rem */
 }
-.tvCon h1{
-    font-size: 45px;
+
+.tvCon h1 {
+    font-size: 2.8125rem; /* 45px converted to rem */
     font-weight: 900;
-    margin-left: 50px;
+    margin-left: 3.125rem; /* 50px converted to rem */
 }
-.tvCon img{
-    width: 450px;
+
+.tvCon img {
+    width: 28.125rem; /* 450px converted to rem */
     animation: tv alternate-reverse 10s infinite;
 }
 
-@keyframes tv{
-    0%{
+@keyframes tv {
+    0% {
         background: url(./img/n1.png) no-repeat center center/cover;
-
     }
-    25%{
-        
-    background: url(./img/n2.png) no-repeat center center/cover;
+    25% {
+        background: url(./img/n2.png) no-repeat center center/cover;
     }
-    50%{
-        
-    background: url(./img/n3.png) no-repeat center center/cover;
+    50% {
+        background: url(./img/n3.png) no-repeat center center/cover;
     }
-    75%{
-        
-    background: url(./img/n4.png) no-repeat center center/cover;
+    75% {
+        background: url(./img/n4.png) no-repeat center center/cover;
     }
-    100%{
-        
-    background: url(./img/n5.png) no-repeat center center/cover;
-    } 
+    100% {
+        background: url(./img/n5.png) no-repeat center center/cover;
+    }
 }
+
+/* ... (rest of your CSS, unchanged) ... */
+
 
 
 /* downlaod section */
@@ -340,4 +344,80 @@ nav img{
 }
 .contact option{
     color: black;
+}
+
+@media (max-width:420px){
+
+    nav{
+        justify-content: center;     
+    }
+    nav img{
+        width: 200px;
+
+    }
+    nav a{
+        margin-right: 5%;
+    }
+    .navMenu button{
+        width: 80px;
+    }
+
+    .content{
+        margin-top: 10vh;
+    }
+
+
+    .content h1,p{
+        line-height: 50px;
+    }
+    
+
+    .tv{
+        flex-direction: column;
+    }
+    .tvCon h1{
+        font-size: 35px;
+    }
+    .tvCon{
+        text-align: center;        
+        white-space: nowrap;
+    }
+
+    .download {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .down{
+        text-align: center;
+    }
+
+    .watching{
+        flex-direction: column;
+        padding: 20px;
+    }
+    .watch{
+        text-align: center;
+    }
+    .watch img{
+        width: 450px;
+    }
+    .watch video{
+        width: 280px;
+        right: 50px;
+    }
+
+
+    .kids{
+        flex-direction: column;
+        text-align: center;
+    }
+    
+
+    .detail summary{
+        width:300px;
+    }
+    .detail p{
+        width: 300px;
+    }
+    
 }

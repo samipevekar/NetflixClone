@@ -5,7 +5,7 @@ const mongoose = require("mongoose")
 mongoose.connect("mongodb://127.0.0.1/Netflix-signup").then(()=>{
     console.log("connected successfully")
 }).catch(()=>{
-    console.log("err")
+    console.log("error to connect")
 })
 
 const LoginSchema = new mongoose.Schema({
@@ -58,7 +58,7 @@ app.post("/signup",async (req,res)=>{
     }else{
         
         myData.save()
-        res.redirect("signup")
+        res.redirect("/signin")
     }
 })
 
