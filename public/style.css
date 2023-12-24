@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 :root {
@@ -346,7 +347,7 @@ nav img {
     color: black;
 }
 
-@media (max-width:420px){
+@media (max-width:600px){
 
     nav{
         justify-content: center;     
@@ -363,12 +364,18 @@ nav img {
     }
 
     .content{
-        margin-top: 10vh;
+        margin-top: 5vh;
+    }
+    
+    .cntForm a{
+        margin-top: 0px;
     }
 
-
+    .content h1{
+        font-size: 40px;
+    }
     .content h1,p{
-        line-height: 50px;
+        line-height: 45px;
     }
     
 
@@ -420,4 +427,11 @@ nav img {
         width: 300px;
     }
     
+    .contacts p{
+        left: 50px;
+        
+    }
+    .contact{
+        margin: 10px;
+    }
 }
