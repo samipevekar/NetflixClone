@@ -86,7 +86,7 @@ app.post("/signin",async (req,res)=>{
 })
 
 
-const port=80
+const port=process.env.PORT || 80
 app.listen(port,()=>{
     console.log(`server is listening on port ${port}`)
 })
