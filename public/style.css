@@ -15,13 +15,18 @@ body {
     background-color: black;
 }
 
+.home {
+    height: 100vh;
+    background: url(img/netflix.png)no-repeat center center/cover;
+    box-shadow: inset 0px 0px 500px 400px rgba(0, 0, 0, 0.694);
+    border-bottom: 10px solid var(--gray);
+}
 
 nav {
     display: flex;
     justify-content: space-between;
     padding: 1.25rem 7.5rem; /* 20px 120px converted to rem */
     align-items: center;
-    width: 100vw;
 }
 
 nav img {
@@ -33,7 +38,6 @@ nav img {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0;
 }
 
 .navMenu button {
@@ -66,12 +70,6 @@ nav img {
     color: black;
 }
 
-.home {
-    height: 100vh;
-    background: url(img/netflix.png)no-repeat center center/cover;
-    box-shadow: inset 0px 0px 500px 400px rgba(0, 0, 0, 0.694);
-    position: relative;
-}
 .content {
     display: flex;
     flex-direction: column;
@@ -122,8 +120,7 @@ nav img {
 .tv {
     display: flex;
     justify-content: space-around;
-    padding: 3.75rem; /* 60px converted to rem */
-    border-top: 0.625rem solid var(--gray); /* 10px converted to rem */
+    padding: 120px;
     
 }
 
@@ -141,14 +138,13 @@ nav img {
 }
 
 .tvCon h1 {
-    white-space: pre-wrap;
     font-size: 2.8125rem; /* 45px converted to rem */
     font-weight: 900;
     margin-left: 3.125rem; /* 50px converted to rem */
 }
 
 .tvCon img {
-    width: 23.125rem; /* 450px converted to rem */
+    width: 28.125rem; /* 450px converted to rem */
     animation: tv alternate-reverse 10s infinite;
 }
 
@@ -180,7 +176,6 @@ nav img {
     padding: 60px;
     justify-content: space-around;
     border-top: 10px solid var(--gray);
-    
 }
 
 .down{
@@ -210,7 +205,6 @@ nav img {
     padding: 60px;
     justify-content: space-around;
     border-top: 10px solid var(--gray);
-    
 }
 .watch{
     display: flex;
@@ -218,8 +212,6 @@ nav img {
     align-items: center;
     justify-content: center;
     position: relative;
-    width: fit-content;
-    margin: auto;
 }
 .watch p{
     font-size: 20px;
@@ -247,7 +239,6 @@ nav img {
     padding: 60px;
     justify-content: space-around;
     border-top: 10px solid var(--gray);
-    
 
 }
 .kid{
@@ -336,10 +327,7 @@ nav img {
     color: gray;
     cursor: pointer;
 }
-.contact ul{
-    width: 100%;
-}
-.contact ul li{
+.contact li{
     list-style: none;
     cursor: pointer;
     color: gray;
@@ -360,7 +348,7 @@ nav img {
     color: black;
 }
 
-@media (max-width:850px){
+@media (max-width:600px){
 
     nav{
         justify-content: center;     
@@ -394,9 +382,10 @@ nav img {
 
     .tv{
         flex-direction: column;
-        padding: 10px;
     }
-    
+    .tvCon h1{
+        font-size: 35px;
+    }
     .tvCon{
         text-align: center;        
         white-space: nowrap;
@@ -404,7 +393,7 @@ nav img {
 
     .download {
         flex-direction: column;
-        padding: 10px;
+        padding: 20px;
     }
     .down{
         text-align: center;
@@ -412,7 +401,7 @@ nav img {
 
     .watching{
         flex-direction: column;
-        padding: 10px;
+        padding: 20px;
     }
     .watch{
         text-align: center;
@@ -422,14 +411,13 @@ nav img {
     }
     .watch video{
         width: 280px;
-        right: 90px;
+        right: 50px;
     }
 
 
     .kids{
         flex-direction: column;
         text-align: center;
-        padding: 10px;
     }
     
 
