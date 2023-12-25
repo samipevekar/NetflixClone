@@ -1,8 +1,9 @@
+require("dotenv").config()
 const express=require("express")
 const app=express()
 const mongoose = require("mongoose")
 
-mongoose.connect("mongodb://127.0.0.1/Netflix-signup").then(()=>{
+mongoose.connect(process.env.MONGO_URI).then(()=>{
     console.log("connected successfully")
 }).catch(()=>{
     console.log("error to connect")
