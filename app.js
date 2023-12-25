@@ -48,12 +48,12 @@ app.get("/logout",(req,res)=>{
 app.post("/signup",async (req,res)=>{
     var myData=new collection(req.body)
 
-    const email=req.body.email
+    const email=req.body.email.trim()
     if (/[A-Z]/.test(email)) {
         return res.render("signup", { errorMessage: "Email should not contain uppercase letters" });
     }
 
-    const password = req.body.password;
+    const password = req.body.password.trim();
     if (password.length < 8) {
         return res.render("signup", { errorMessage: "Password must contain 8 characters" });
     }
