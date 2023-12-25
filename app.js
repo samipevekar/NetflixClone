@@ -39,6 +39,10 @@ app.get("/home",(req,res)=>{
     res.render("home")
 })
 
+app.get("/logout",(req,res)=>{
+    res.redirect("/")
+})
+
 // collecting signup users
 
 app.post("/signup",async (req,res)=>{
