@@ -129,6 +129,8 @@ nav img {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
+    margin-top: 10%;
 }
 
 .tvCon p {
@@ -382,7 +384,9 @@ nav img {
 
     .tv{
         flex-direction: column;
+        margin-top:30%;
     }
+    
     .tvCon h1{
         font-size: 35px;
     }
