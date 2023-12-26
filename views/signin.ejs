@@ -118,8 +118,8 @@
     <div id="signin">
         <form action="/signin" method="post">
             <h1>Sign In</h1>
-            <input type="email" name="email" id="" placeholder="Enter your email" required autocomplete="off">
-            <input type="password" name="password" id="" placeholder="Password" required autocomplete="off">
+            <input type="email" name="email" id="email" placeholder="Enter your email" required autocomplete="off">
+            <input type="password" name="password" id="password" placeholder="Password" required autocomplete="off">
             <% if (typeof errorMessage !== 'undefined') { %>
                 <p style="color: red; text-align: center;"><%= errorMessage %></p>
             <% } %>
