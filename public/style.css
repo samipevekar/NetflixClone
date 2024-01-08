@@ -232,14 +232,15 @@ nav img {
     margin-left: 60px;
 }
 .watch img{
-    width: 500px;
+    width: 450px;
+    background: url(img/video.mp4);
+    position: relative;
 }
 .watch video{
-    top: 40px;
-    right: 100px;
-    width: 310px;
     z-index: -1;
+    width: 280px;
     position: absolute;
+    top: 40px;
 }
 
 .kids{
@@ -356,7 +357,7 @@ nav img {
     color: black;
 }
 
-@media (max-width:600px){
+@media (max-width:857px){
 
     nav{
         justify-content: center;     
@@ -416,13 +417,14 @@ nav img {
     .watch{
         text-align: center;
     }
-    .watch img{
+    /* .watch img{
         width: 450px;
+        overflow: hidden;
     }
     .watch video{
         width: 280px;
         right: 50px;
-    }
+    } */
 
 
     .kids{
