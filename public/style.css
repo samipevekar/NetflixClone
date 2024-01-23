@@ -13,6 +13,7 @@ body {
     font-family: sans-serif;
     color: white;
     background-color: black;
+   
 }
 body,html{
     height: 100%;
@@ -127,7 +128,7 @@ nav img {
 .tv {
     display: flex;
     justify-content: space-around;
-    padding: 60px;
+    padding: 100px;
     
 }
 

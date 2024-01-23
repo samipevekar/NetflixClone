@@ -1,54 +1,65 @@
-require("dotenv").config()
-const express=require("express")
-const app=express()
-const mongoose = require("mongoose")
+require("dotenv").config();
+const express = require("express");
+const app = express();
+const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
+const { body,validationResult } = require('express-validator');
 
-mongoose.connect(process.env.MONGO_URI).then(()=>{
-    console.log("connected successfully")
-}).catch(()=>{
-    console.log("error to connect")
-})
+mongoose.connect(process.env.MONGO_URI).then(() => {
+    console.log("Connected to MongoDB successfully");
+}).catch((error) => {
+    console.error("Error connecting to MongoDB:", error);
+});
 
 const LoginSchema = new mongoose.Schema({
-    email:String,
-    password:String
-})
+    email: String,
+    password: String
+});
 
-const collection = new mongoose.model("signups",LoginSchema);
+const collection = new mongoose.model("signups", LoginSchema);
 
-app.set("view engine","ejs")  //set all files to ejs view engine
+app.set("view engine", "ejs");
 
-app.use(express.static("public"))
-app.use(express.urlencoded())
-app.use(express.json())
+app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-// all get methods
-app.get("/",(req,res)=>{
-    res.render("index")
-})
+// All GET methods
+app.get("/", (req, res) => {
+    res.render("index");
+});
 
-app.get("/signin",(req,res)=>{
-    res.render("signin")
-})
+app.get("/signin", (req, res) => {
+    res.render("signin");
+});
 
-app.get("/signup",(req,res)=>{
-    res.render("signup")
-})
+app.get("/signup", (req, res) => {
+    res.render("signup");
+});
 
-app.get("/home",(req,res)=>{
-    res.render("home")
-})
+app.get("/home", (req, res) => {
+    res.render("home");
+});
 
-app.get("/logout",(req,res)=>{
-    res.redirect("/")
-})
+app.get("/logout", (req, res) => {
+    res.redirect("/");
+});
 
-// collecting signup users
+// Collecting signup users
+app.post("/signup",[
+    body('name'),
+    body('password','Password must be atleast 8 characters').isLength({min:8}),
+], async (req, res) => {
 
-app.post("/signup",async (req,res)=>{
-    var myData=new collection(req.body)
+    const errors=validationResult(req);
+    if(!errors.isEmpty()){
+        return res.status(400).json({errors:errors.array()})
+    }
 
-    const email=req.body.email.trim()
+
+    const myData = new collection(req.body);
+
+    const email = req.body.email.trim();
     if (/[A-Z]/.test(email)) {
         return res.render("signup", { errorMessage: "Email should not contain uppercase letters" });
     }
@@ -61,42 +72,43 @@ app.post("/signup",async (req,res)=>{
         return res.render("signup", { errorMessage: "Password must contain '@'" });
     }
 
-    //checking if user is already exist in the db
-    const existingUser=await collection.findOne({email:myData.email})
-    if(existingUser){
-        res.render("signup",{ errorMessage: "User already exists" })
-    }else{
-        
-        myData.save()
-        res.redirect("/signin")
+    // Hash the password before saving it to the database
+    const hashedPassword = await bcrypt.hash(req.body.password, 10);
+    myData.password = hashedPassword;
+
+    // Checking if the user already exists in the database
+    const existingUser = await collection.findOne({ email: myData.email });
+    if (existingUser) {
+        res.render("signup", { errorMessage: "User already exists" });
+    } else {
+        myData.save();
+        res.redirect("/signin");
     }
-})
+});
 
-
-//login users
-app.post("/signin",async (req,res)=>{
-    try{
-        const check=await collection.findOne({email:req.body.email})
-        if(!check){
-            res.render("signin",{errorMessage:"User not found"})
-        } 
-
-        //conparing password if match then login
-        const isPasswordMatch=await req.body.password===check.password
-        if(isPasswordMatch){
-            res.render("home")
-        }else{
-            res.render("signin",{ errorMessage: "Wrong password" })
+// Login users
+app.post("/signin", async (req, res) => {
+    try {
+        const check = await collection.findOne({ email: req.body.email });
+        if (!check) {
+            return res.render("signin", { errorMessage: "User not found" });
         }
+
+        // Compare hashed password
+        const isPasswordMatch = await bcrypt.compare(req.body.password, check.password);
+
+        if (isPasswordMatch) {
+            res.render("home");
+        } else {
+            res.render("signin", { errorMessage: "Wrong password" });
+        }
+    } catch (error) {
+        console.error("Error during login:", error);
+        res.render("signin", { errorMessage: "An error occurred during login. Please try again." });
     }
-    catch{
-        res.render("signin",{ errorMessage: "An error occured" })
-    }
+});
 
-})
-
-
-const port=process.env.PORT || 80
-app.listen(port,()=>{
-    console.log(`server is listening on port ${port}`)
-})
+const port = process.env.PORT || 1000;
+app.listen(port, () => {
+    console.log(`Server is listening on port ${port}`);
+});
